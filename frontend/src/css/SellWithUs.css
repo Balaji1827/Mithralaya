@@ -1,0 +1,1353 @@
+
+/* =========================================================
+   MITHRALAYA — SELL WITH US
+   Premium Women + Kids Fashion Seller Page
+   Fully Responsive: Desktop / Tablet / Mobile
+   ========================================================= */
+
+.mithralaya-sell-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #fffaf7;
+  color: #3e2b25;
+  font-family: "Poppins", "Montserrat", Arial, sans-serif;
+}
+
+.mithralaya-sell-page *,
+.mithralaya-sell-page *::before,
+.mithralaya-sell-page *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   COMMON
+   ========================================================= */
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #a06b58;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 55px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0 0 18px;
+  color: #39251f;
+  font-size: 48px;
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+}
+
+.section-heading h2 span {
+  color: #a86e59;
+  font-style: italic;
+}
+
+.section-heading p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #78635b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.mithralaya-sell-hero {
+  position: relative;
+  min-height: 720px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(48, 30, 25, 0.78) 0%,
+      rgba(48, 30, 25, 0.56) 42%,
+      rgba(48, 30, 25, 0.20) 100%
+    ),
+    url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2200&q=85")
+      center center / cover no-repeat;
+}
+
+.mithralaya-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(67, 39, 32, 0.35),
+      transparent 60%
+    );
+  pointer-events: none;
+}
+
+.mithralaya-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 100px 60px;
+}
+
+.mithralaya-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 8px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.mithralaya-hero-content h1 {
+  max-width: 780px;
+  margin: 25px 0 25px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 5.4vw, 76px);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -2px;
+}
+
+.mithralaya-hero-content h1 span {
+  color: #f2c9b4;
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 650px;
+  margin: 0 0 34px;
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.mithralaya-hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.mithralaya-primary-btn,
+.mithralaya-secondary-btn,
+.mithralaya-cta-btn {
+  min-height: 52px;
+  padding: 14px 28px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.mithralaya-primary-btn {
+  border: 1px solid #f3d1bd;
+  background: #f3d1bd;
+  color: #4b3027;
+}
+
+.mithralaya-primary-btn:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #4b3027;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.mithralaya-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: transparent;
+  color: #ffffff;
+}
+
+.mithralaya-secondary-btn:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #4b3027;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.mithralaya-intro {
+  padding: 115px 7%;
+  background: #fffaf7;
+}
+
+.intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 90px;
+  align-items: center;
+}
+
+.intro-content h2 {
+  margin: 0 0 25px;
+  color: #39251f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4.8vw, 64px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.intro-content h2 span {
+  color: #a86e59;
+  font-style: italic;
+}
+
+.intro-content p {
+  max-width: 670px;
+  margin: 0 0 18px;
+  color: #75635b;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.intro-highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.highlight-card {
+  position: relative;
+  padding: 27px 28px 27px 74px;
+  border: 1px solid #eadbd2;
+  background: #ffffff;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 15px 35px rgba(80, 47, 38, 0.08);
+}
+
+.highlight-card span {
+  position: absolute;
+  left: 25px;
+  top: 28px;
+  color: #c28d76;
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+
+.highlight-card h3 {
+  margin: 0 0 8px;
+  color: #3f2922;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.highlight-card p {
+  margin: 0;
+  color: #79665d;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
+
+.mithralaya-categories {
+  padding: 110px 6%;
+  background: #f7eee8;
+}
+
+.category-grid {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.category-card {
+  position: relative;
+  min-height: 530px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.35s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.women-card {
+  background-image:
+    url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=85");
+}
+
+.kids-card {
+  background-image:
+    url("https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=85");
+}
+
+.accessories-card {
+  background-image:
+    url("https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=1000&q=85");
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(43, 26, 21, 0.86) 0%,
+      rgba(43, 26, 21, 0.35) 48%,
+      rgba(43, 26, 21, 0.04) 100%
+    );
+}
+
+.category-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 34px;
+  color: #ffffff;
+}
+
+.category-content > span {
+  display: block;
+  margin-bottom: 9px;
+  color: #f3c8b2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.category-content h3 {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.category-content p {
+  max-width: 330px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.mithralaya-benefits {
+  padding: 115px 7%;
+  background: #ffffff;
+}
+
+.benefits-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border-top: 1px solid #eaded7;
+  border-left: 1px solid #eaded7;
+}
+
+.benefit-card {
+  min-height: 235px;
+  padding: 34px;
+  border-right: 1px solid #eaded7;
+  border-bottom: 1px solid #eaded7;
+  background: #ffffff;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  background: #fff8f3;
+}
+
+.benefit-number {
+  margin-bottom: 25px;
+  color: #c18a72;
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+
+.benefit-card h3 {
+  margin: 0 0 12px;
+  color: #3f2922;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: #79675e;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+   ========================================================= */
+
+.mithralaya-how {
+  padding: 115px 6%;
+  background: #f8eee8;
+}
+
+.steps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.step-item {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.step-circle {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b9826d;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #a36a55;
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+.step-item h3 {
+  margin: 0 0 10px;
+  color: #3f2922;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.step-item p {
+  max-width: 215px;
+  margin: 0 auto;
+  color: #79665d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.step-line {
+  width: 90px;
+  height: 1px;
+  flex-shrink: 0;
+  margin-top: 38px;
+  background: #d8bdb0;
+}
+
+
+/* =========================================================
+   SELLER TYPES
+   ========================================================= */
+
+.mithralaya-seller-types {
+  padding: 115px 7%;
+  background: #fffaf7;
+}
+
+.seller-types-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.seller-types-content h2 {
+  margin: 0 0 25px;
+  color: #3d2821;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 5vw, 66px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+}
+
+.seller-types-content h2 span {
+  color: #a86e59;
+  font-style: italic;
+}
+
+.seller-types-content p {
+  max-width: 480px;
+  margin: 0;
+  color: #78645c;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.seller-types-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #e7d9d1;
+  border-left: 1px solid #e7d9d1;
+}
+
+.seller-type {
+  min-height: 100px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-right: 1px solid #e7d9d1;
+  border-bottom: 1px solid #e7d9d1;
+  background: #ffffff;
+  transition:
+    background 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.seller-type:hover {
+  padding-left: 31px;
+  background: #fdf3ed;
+}
+
+.seller-type span {
+  color: #c18a72;
+  font-family: Georgia, serif;
+  font-size: 13px;
+}
+
+.seller-type strong {
+  color: #4a3129;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.mithralaya-final-cta {
+  position: relative;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 6%;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(62, 37, 29, 0.78),
+      rgba(62, 37, 29, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2200&q=85")
+      center / cover no-repeat;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+}
+
+.cta-content .section-label {
+  color: #f0c8b4;
+}
+
+.cta-content h2 {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5.5vw, 70px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.cta-content h2 span {
+  color: #f2c9b5;
+  font-style: italic;
+}
+
+.cta-content p {
+  max-width: 610px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.mithralaya-cta-btn {
+  border: 1px solid #f0c6b1;
+  background: #f0c6b1;
+  color: #4c3027;
+}
+
+.mithralaya-cta-btn:hover {
+  transform: translateY(-2px);
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #4c3027;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .mithralaya-hero-content {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .intro-container {
+    gap: 55px;
+  }
+
+  .category-grid {
+    gap: 16px;
+  }
+
+  .category-card {
+    min-height: 480px;
+  }
+
+  .seller-types-container {
+    gap: 55px;
+  }
+
+  .step-line {
+    width: 55px;
+  }
+}
+
+
+/* =========================================================
+   TABLET — 992px
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+  .mithralaya-sell-hero {
+    min-height: 650px;
+  }
+
+  .mithralaya-hero-content {
+    padding: 85px 38px;
+  }
+
+  .mithralaya-hero-content h1 {
+    max-width: 650px;
+    font-size: 58px;
+  }
+
+  .hero-description {
+    max-width: 570px;
+  }
+
+  .mithralaya-intro,
+  .mithralaya-categories,
+  .mithralaya-benefits,
+  .mithralaya-how,
+  .mithralaya-seller-types {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .intro-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .intro-content p {
+    max-width: 100%;
+  }
+
+  .intro-highlight {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .highlight-card {
+    padding: 28px 20px;
+  }
+
+  .highlight-card span {
+    position: static;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .highlight-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card:last-child {
+    grid-column: span 2;
+    min-height: 420px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-container {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .step-item {
+    flex: 0 0 calc(50% - 45px);
+  }
+
+  .step-line {
+    display: none;
+  }
+
+  .seller-types-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .seller-types-content p {
+    max-width: 700px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .mithralaya-sell-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section-label {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 2.2px;
+  }
+
+  .section-heading {
+    margin-bottom: 38px;
+    padding: 0 15px;
+  }
+
+  .section-heading h2 {
+    font-size: 38px;
+    line-height: 1.08;
+    letter-spacing: -0.8px;
+  }
+
+  .section-heading p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* HERO */
+
+  .mithralaya-sell-hero {
+    min-height: 680px;
+    align-items: flex-end;
+    background-position: 58% center;
+  }
+
+  .mithralaya-sell-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(48, 30, 25, 0.20) 0%,
+        rgba(48, 30, 25, 0.55) 48%,
+        rgba(48, 30, 25, 0.88) 100%
+      );
+    z-index: 0;
+  }
+
+  .mithralaya-hero-overlay {
+    display: none;
+  }
+
+  .mithralaya-hero-content {
+    z-index: 2;
+    width: 100%;
+    padding: 65px 20px 50px;
+  }
+
+  .mithralaya-badge {
+    max-width: 100%;
+    padding: 7px 12px;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  .mithralaya-hero-content h1 {
+    max-width: 100%;
+    margin: 20px 0 18px;
+    font-size: clamp(39px, 10vw, 55px);
+    line-height: 1.04;
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .mithralaya-hero-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mithralaya-primary-btn,
+  .mithralaya-secondary-btn {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 18px;
+    font-size: 11px;
+  }
+
+
+  /* INTRO */
+
+  .mithralaya-intro {
+    padding: 70px 20px;
+  }
+
+  .intro-container {
+    display: block;
+  }
+
+  .intro-content h2 {
+    margin-bottom: 22px;
+    font-size: 42px;
+  }
+
+  .intro-content p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .intro-highlight {
+    margin-top: 35px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .highlight-card {
+    width: 100%;
+    padding: 22px 20px;
+  }
+
+  .highlight-card span {
+    margin-bottom: 8px;
+  }
+
+  .highlight-card h3 {
+    font-size: 23px;
+  }
+
+  .highlight-card p {
+    font-size: 12px;
+  }
+
+
+  /* CATEGORIES */
+
+  .mithralaya-categories {
+    padding: 70px 15px;
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .category-card,
+  .category-card:last-child {
+    grid-column: auto;
+    width: 100%;
+    min-height: 430px;
+  }
+
+  .category-content {
+    padding: 25px;
+  }
+
+  .category-content h3 {
+    font-size: 30px;
+  }
+
+  .category-content p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+
+  /* BENEFITS */
+
+  .mithralaya-benefits {
+    padding: 70px 15px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .benefit-card {
+    min-height: auto;
+    padding: 27px 22px;
+  }
+
+  .benefit-number {
+    margin-bottom: 17px;
+  }
+
+  .benefit-card h3 {
+    font-size: 22px;
+  }
+
+  .benefit-card p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+
+  /* HOW IT WORKS */
+
+  .mithralaya-how {
+    padding: 70px 20px;
+  }
+
+  .steps-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step-item {
+    width: 100%;
+    flex: none;
+    padding: 0 0 42px;
+    text-align: center;
+  }
+
+  .step-circle {
+    width: 66px;
+    height: 66px;
+    margin-bottom: 17px;
+    font-size: 15px;
+  }
+
+  .step-item h3 {
+    font-size: 22px;
+  }
+
+  .step-item p {
+    max-width: 290px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .step-item:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 35px;
+    margin: 20px auto 0;
+    background: #d6b9ab;
+  }
+
+
+  /* SELLER TYPES */
+
+  .mithralaya-seller-types {
+    padding: 70px 20px;
+  }
+
+  .seller-types-container {
+    display: block;
+  }
+
+  .seller-types-content h2 {
+    margin-bottom: 22px;
+    font-size: 44px;
+  }
+
+  .seller-types-content p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .seller-types-list {
+    margin-top: 35px;
+    grid-template-columns: 1fr;
+  }
+
+  .seller-type {
+    min-height: 75px;
+    padding: 20px;
+  }
+
+  .seller-type:hover {
+    padding-left: 25px;
+  }
+
+  .seller-type strong {
+    font-size: 16px;
+  }
+
+
+  /* FINAL CTA */
+
+  .mithralaya-final-cta {
+    min-height: 540px;
+    padding: 70px 20px;
+    background-position: 58% center;
+  }
+
+  .cta-content {
+    width: 100%;
+  }
+
+  .cta-content h2 {
+    font-size: 42px;
+    line-height: 1.08;
+  }
+
+  .cta-content p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .mithralaya-cta-btn {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .mithralaya-sell-hero {
+    min-height: 650px;
+    background-position: 60% center;
+  }
+
+  .mithralaya-hero-content {
+    padding: 55px 16px 38px;
+  }
+
+  .mithralaya-badge {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .mithralaya-hero-content h1 {
+    margin-top: 16px;
+    font-size: 39px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .mithralaya-intro {
+    padding: 58px 16px;
+  }
+
+  .intro-content h2 {
+    font-size: 37px;
+  }
+
+  .intro-content p {
+    font-size: 12px;
+  }
+
+  .mithralaya-categories {
+    padding: 58px 12px;
+  }
+
+  .category-card,
+  .category-card:last-child {
+    min-height: 390px;
+  }
+
+  .category-content {
+    padding: 22px;
+  }
+
+  .category-content h3 {
+    font-size: 27px;
+  }
+
+  .mithralaya-benefits {
+    padding: 58px 12px;
+  }
+
+  .benefit-card {
+    padding: 24px 18px;
+  }
+
+  .mithralaya-how {
+    padding: 58px 16px;
+  }
+
+  .mithralaya-seller-types {
+    padding: 58px 16px;
+  }
+
+  .seller-types-content h2 {
+    font-size: 39px;
+  }
+
+  .seller-type {
+    padding: 18px;
+  }
+
+  .seller-type strong {
+    font-size: 15px;
+  }
+
+  .mithralaya-final-cta {
+    min-height: 500px;
+    padding: 60px 16px;
+  }
+
+  .cta-content h2 {
+    font-size: 38px;
+  }
+
+  .cta-content p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .mithralaya-sell-hero {
+    min-height: 625px;
+  }
+
+  .mithralaya-hero-content {
+    padding: 45px 14px 30px;
+  }
+
+  .mithralaya-badge {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .mithralaya-hero-content h1 {
+    font-size: 34px;
+    letter-spacing: -0.7px;
+  }
+
+  .hero-description {
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .mithralaya-primary-btn,
+  .mithralaya-secondary-btn {
+    min-height: 47px;
+    font-size: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .intro-content h2 {
+    font-size: 34px;
+  }
+
+  .category-card,
+  .category-card:last-child {
+    min-height: 360px;
+  }
+
+  .category-content {
+    padding: 19px;
+  }
+
+  .category-content h3 {
+    font-size: 25px;
+  }
+
+  .benefit-card h3 {
+    font-size: 20px;
+  }
+
+  .seller-types-content h2 {
+    font-size: 35px;
+  }
+
+  .seller-type {
+    gap: 12px;
+  }
+
+  .seller-type strong {
+    font-size: 14px;
+  }
+
+  .cta-content h2 {
+    font-size: 34px;
+  }
+
+  .mithralaya-cta-btn {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SAFETY — PREVENT MOBILE OVERFLOW
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .mithralaya-sell-page,
+  .mithralaya-sell-page section,
+  .mithralaya-sell-page .intro-container,
+  .mithralaya-sell-page .category-grid,
+  .mithralaya-sell-page .benefits-grid,
+  .mithralaya-sell-page .steps-container,
+  .mithralaya-sell-page .seller-types-container,
+  .mithralaya-sell-page .seller-types-list {
+    max-width: 100%;
+  }
+
+  .mithralaya-sell-page img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mithralaya-sell-page h1,
+  .mithralaya-sell-page h2,
+  .mithralaya-sell-page h3,
+  .mithralaya-sell-page p {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .mithralaya-sell-page a,
+  .mithralaya-sell-page button {
+    max-width: 100%;
+  }
+}
+

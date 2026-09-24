@@ -1,0 +1,382 @@
+/* ==========================================================
+   ORDER SUCCESS PAGE
+   ========================================================== */
+.order-success-page {
+  max-width: 600px;
+  margin: 4rem auto;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease-in-out;
+  margin-top: 250px;
+}
+
+.success-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* SUCCESS TITLE */
+.order-success-page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: #0f9d58;
+  font-weight: 700;
+}
+
+/* MESSAGE */
+.order-success-page p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+/* VIEW ORDERS BUTTON */
+.btn-view-orders {
+  display: inline-block;
+  background: #000;
+  color: #facc15;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-view-orders:hover {
+  background: #222;
+}
+
+/* DOWNLOAD INVOICE BUTTON */
+.btn-download-invoice {
+  display: inline-block;
+  background: #1d7130;
+  color: #ffffff;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.25s ease;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.btn-download-invoice:hover {
+  background-color: #125421;
+}
+
+/* ==========================================================
+   REVIEW ITEMS SECTION
+   ========================================================== */
+.review-items-section {
+  margin-top: 2rem;
+  text-align: left;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+
+.review-items-section h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.2rem;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.review-items-hint {
+  font-size: 0.9rem !important;
+  color: #888 !important;
+  margin: 0 0 1rem !important;
+  text-align: left;
+}
+
+.review-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-item-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.review-item-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.review-item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.review-item-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review-item-meta {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.btn-write-review {
+  background: #000;
+  color: #facc15;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: 0.2s ease;
+}
+
+.btn-write-review:hover:not(:disabled) {
+  background: #222;
+}
+
+.btn-write-review:disabled {
+  background: #e6f4ea;
+  color: #0f9d58;
+  cursor: default;
+}
+
+/* ==========================================================
+   REVIEW MODAL
+   ========================================================== */
+.review-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.review-modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.review-modal h3 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+  padding-right: 28px;
+  text-align: left;
+}
+
+.review-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #888;
+  line-height: 1;
+  padding: 4px;
+}
+
+.review-modal-close:hover {
+  color: #000;
+}
+
+/* STARS */
+.star-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.star-btn.filled {
+  color: #facc15;
+}
+
+.star-btn:hover {
+  transform: scale(1.15);
+}
+
+.star-label {
+  margin-left: 10px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* INPUTS */
+.review-input,
+.review-textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+  font-family: inherit;
+  box-sizing: border-box;
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.review-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.review-input:focus,
+.review-textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* ERROR */
+.review-error {
+  background: #fdecea;
+  color: #b02a2a;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* SUBMIT */
+.btn-submit-review {
+  width: 100%;
+  background: #000;
+  color: #facc15;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-submit-review:hover:not(:disabled) {
+  background: #222;
+}
+
+.btn-submit-review:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.review-moderation-note {
+  font-size: 0.78rem !important;
+  color: #999 !important;
+  text-align: center;
+  margin: 10px 0 0 !important;
+}
+
+/* ==========================================================
+   ANIMATION
+   ========================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 600px) {
+  .order-success-page {
+    margin: 2.5rem 1rem;
+    padding: 2rem 1.5rem;
+    margin-top: 180px;
+  }
+
+  .order-success-page h1 {
+    font-size: 1.7rem;
+  }
+
+  .order-success-page p {
+    font-size: 1rem;
+  }
+
+  .review-item-card {
+    flex-wrap: wrap;
+  }
+
+  .btn-write-review {
+    width: 100%;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-download-invoice {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .review-modal {
+    padding: 20px 16px;
+  }
+
+  .star-btn {
+    font-size: 1.7rem;
+  }
+}

@@ -1,0 +1,234 @@
+/* ===========================================================
+   ADMIN DASHBOARD PAGE — dashboard content only.
+   Sidebar styling lives entirely in adminSidebar.css now (see the
+   asb- prefixed classes there) — this file used to also contain
+   .admin-sidebar/.sidebar-logo/.nav-icon/nav a.active rules, but
+   those are dead code now that the sidebar's JSX uses asb- classes.
+
+   Also fixes a real bug: .admin-layout previously set a global
+   `color: #fff` (white) as the default text color, while individual
+   pieces fought it with scattered overrides (#cec28e, #585243,
+   #474633, #9e9a87, #000) — leftovers from an unfinished dark-glass
+   theme that clashed with the light indigo theme used everywhere
+   else in the admin panel. Redesigned to match.
+=========================================================== */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  color: #1e1b3a;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  /* was margin-top: 139px to clear the site header — no longer needed
+     since Header is not rendered on /admin routes */
+}
+
+.admin-content {
+  flex: 1;
+  padding: 28px 32px;
+  background: #f5f6fb;
+  min-height: 100vh;
+}
+
+.adb-header {
+  position: relative;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ececf7;
+}
+
+.adb-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 72px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+}
+
+.adb-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #1e1b3a;
+}
+
+/* ------------------------------
+   Stat cards
+------------------------------ */
+.adb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.adb-card {
+  position: relative;
+  padding: 22px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #ececf7;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.05);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+}
+
+.adb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(79, 70, 229, 0.12);
+}
+
+.adb-card h3 {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.adb-card p {
+  margin: 10px 0 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: #1e1b3a;
+}
+
+.adb-change {
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+/* ------------------------------
+   Charts section
+------------------------------ */
+.adb-charts-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.adb-chart-container {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #ececf7;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.05);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+  height: 380px;
+}
+
+.adb-chart-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(79, 70, 229, 0.1);
+}
+
+.adb-chart-container h3 {
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #312e81;
+}
+
+.adb-piechart {
+  max-width: 260px !important;
+  max-height: 260px !important;
+}
+
+/* ------------------------------
+   Activity section
+------------------------------ */
+.adb-activity-section {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #ececf7;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.05);
+  overflow-y: auto;
+  height: 380px;
+}
+
+.adb-activity-section h3 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #312e81;
+}
+
+.adb-activity-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.adb-activity-section::-webkit-scrollbar-thumb {
+  background: #c7c9f5;
+  border-radius: 10px;
+}
+
+.adb-activity-item {
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.adb-activity-item:last-child {
+  border-bottom: none;
+}
+
+.adb-activity-item:hover {
+  transform: translateX(4px);
+  background: #f8f8fd;
+}
+
+.adb-product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e1b3a;
+}
+
+.adb-sales-data {
+  text-align: right;
+}
+
+.adb-units {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.adb-revenue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 900px) {
+  .admin-content {
+    padding: 20px;
+  }
+
+  .adb-charts-section {
+    flex-direction: column;
+  }
+
+  .adb-chart-container,
+  .adb-activity-section {
+    height: auto;
+    min-height: 320px;
+  }
+}

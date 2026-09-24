@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ---- Warm brown palette (swapped from the old blue/orange) ---- */
+  --brown: #6F4E37;          /* coffee — primary brand color */
+  --brown-dark: #4E3524;     /* deep espresso — hover/active */
+  --brown-light: #8C6A4E;    /* lighter coffee — gradients */
+  --tan: #C89F6C;            /* warm tan — accent / secondary CTA */
+  --tan-dark: #B4884F;
+  --cream: #FBF6EF;          /* card / panel warmth */
+  --ink: #2B2016;            /* near-black warm ink for text */
+  --muted: #8A7A6B;          /* warm grey-brown for secondary text */
+  --line: #E7DCCC;           /* warm hairline borders */
+  --danger: #C4483B;         /* muted brick red, fits the palette */
+  --page-bg: #F3ECE1;        /* soft warm beige page background */
+  --font: 'Inter', 'Segoe UI', sans-serif;
+}
+
+
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--page-bg);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(140, 106, 78, 0.08), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(111, 78, 55, 0.08), transparent 40%);
+  padding: 24px;
+  font-family: var(--font);
+  color: var(--ink);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 660px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(43, 32, 22, 0.06), 0 24px 48px -16px rgba(78, 53, 36, 0.28);
+  overflow: hidden;
+}
+
+.auth-card.shake { animation: shake 0.4s; }
+
+@keyframes shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+
+/* ---------- brand panel ---------- */
+.auth-brand {
+  background: linear-gradient(160deg, var(--brown-light) 0%, var(--brown) 55%, var(--brown-dark) 100%);
+  color: #fff;
+  padding: 44px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle decorative glow, purely visual — doesn't affect layout */
+.auth-brand::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 159, 108, 0.35), transparent 70%);
+  pointer-events: none;
+}
+
+.auth-brand-text {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-brand-text h1 {
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.auth-brand-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0;
+}
+
+.auth-brand-art {
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+}
+
+/* ---------- form panel ---------- */
+.auth-form-panel {
+  padding: 44px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
+}
+
+.auth-form-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.auth-label:not(:first-child) {
+  margin-top: 18px;
+}
+
+.text-field,
+.phone-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1.5px solid var(--line);
+  padding-bottom: 8px;
+  transition: border-color 0.15s ease;
+}
+
+.text-field:focus-within,
+.phone-field:focus-within {
+  border-bottom-color: var(--brown);
+}
+
+.text-field.invalid,
+.phone-field.invalid {
+  border-bottom-color: var(--danger);
+}
+
+.phone-prefix {
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.text-field input,
+.phone-field input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font);
+  font-size: 15px;
+  color: var(--ink);
+  padding: 2px 0;
+  background: transparent;
+}
+
+.text-field input::placeholder,
+.phone-field input::placeholder {
+  color: #b7a894;
+}
+
+.field-error-text {
+  display: block;
+  font-size: 12px;
+  color: var(--danger);
+  margin-top: 6px;
+}
+
+.field-error-text.center {
+  text-align: center;
+}
+
+.auth-terms {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 18px 0 0;
+}
+
+.auth-terms a {
+  color: var(--brown);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-terms a:hover {
+  text-decoration: underline;
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 20px 0 0;
+}
+
+.error-message {
+  font-size: 13px;
+  color: var(--danger);
+  margin-top: 12px;
+}
+
+.error-message.center {
+  text-align: center;
+}
+
+/* ---------- OTP step ---------- */
+.auth-form-panel.is-otp {
+  text-align: center;
+}
+
+.otp-sent-line {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0 0 22px;
+}
+
+.otp-sent-line strong {
+  color: var(--brown-dark);
+}
+
+.otp-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.otp-boxes input {
+  width: 42px;
+  height: 46px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  font-family: var(--font);
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.otp-boxes input:focus {
+  border-color: var(--brown);
+  box-shadow: 0 0 0 3px rgba(111, 78, 55, 0.14);
+}
+
+.otp-boxes.invalid input {
+  border-color: var(--danger);
+}
+
+/* ---------- buttons ---------- */
+.btn-primary {
+  height: 48px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--tan), var(--tan-dark));
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 16px -4px rgba(180, 136, 79, 0.55);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.is-otp .btn-primary {
+  background: linear-gradient(135deg, var(--brown-light), var(--brown));
+  box-shadow: 0 6px 16px -4px rgba(111, 78, 55, 0.5);
+}
+
+.is-otp .btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--brown), var(--brown-dark));
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--tan-dark), #9c7440);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -4px rgba(180, 136, 79, 0.6);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  background: #e6d3ba;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--brown);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link-btn:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.link-btn:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 620px) {
+  .auth-card {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    border-radius: 14px;
+  }
+  .auth-brand {
+    min-height: unset;
+    padding: 28px 24px;
+  }
+  .auth-brand-art {
+    max-width: 160px;
+    margin: 20px auto 0;
+  }
+  .auth-form-panel {
+    padding: 28px 24px;
+  }
+  .otp-boxes input {
+    width: 36px;
+    height: 42px;
+  }
+}
+
+/* ---------- accessibility ---------- */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--brown);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner, .auth-card.shake { animation: none; }
+}

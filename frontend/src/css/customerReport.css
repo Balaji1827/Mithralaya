@@ -1,0 +1,228 @@
+
+.cst-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cst-header h1 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--cst-ink);
+}
+
+.cst-export-btn {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1.5px solid var(--cst-border);
+  background: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cst-export-btn:hover:not(:disabled) { background: var(--cst-paper); border-color: var(--cst-ink); }
+.cst-export-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ============================
+   FILTER BAR
+============================ */
+.cst-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cst-presets {
+  display: flex;
+  gap: 6px;
+  background: var(--cst-paper);
+  padding: 4px;
+  border-radius: 9px;
+  flex-wrap: wrap;
+}
+
+.cst-preset-btn {
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cst-muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cst-preset-btn.active { background: var(--cst-ink); color: #fff; }
+
+.cst-date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--cst-muted);
+}
+
+.cst-date-inputs input {
+  padding: 7px 9px;
+  border-radius: 7px;
+  border: 1.5px solid var(--cst-border);
+  font-size: 13px;
+}
+
+.cst-error {
+  background: #FFE7EC;
+  color: var(--cst-coral);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  margin-bottom: 16px;
+}
+
+/* ============================
+   SUMMARY CARDS
+============================ */
+.cst-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.cst-card {
+  background: #fff;
+  border: 1px solid var(--cst-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.cst-card h3 {
+  margin: 0 0 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cst-muted);
+}
+
+.cst-card p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cst-ink);
+}
+
+.cst-card-green p { color: var(--cst-green); }
+.cst-card-blue p { color: var(--cst-blue); }
+.cst-card-coral p { color: var(--cst-coral); }
+
+/* ============================
+   CHARTS
+============================ */
+.cst-chart-container {
+  background: #fff;
+  border: 1px solid var(--cst-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.cst-chart-container h3 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cst-ink);
+}
+
+.cst-charts-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.cst-piechart { max-height: 260px; }
+
+.cst-empty {
+  color: var(--cst-muted);
+  font-size: 13px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ============================
+   TABLE
+============================ */
+.cst-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cst-table th {
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cst-muted);
+  border-bottom: 1.5px solid var(--cst-border);
+}
+
+.cst-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--cst-border);
+  color: var(--cst-ink);
+}
+
+.cst-table tr:last-child td { border-bottom: none; }
+
+.cst-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.cst-table-header h3 { margin: 0; }
+
+.cst-table-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.cst-days-inactive {
+  color: var(--cst-coral);
+  font-weight: 600;
+}
+
+.cst-muted-cell { color: var(--cst-muted); }
+
+.cst-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cst-pill-blue { background: var(--cst-blue-bg); color: var(--cst-blue); }
+.cst-pill-slate { background: var(--cst-slate-bg); color: var(--cst-slate); }
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 1000px) {
+  .cst-grid { grid-template-columns: repeat(2, 1fr); }
+  .cst-charts-section { grid-template-columns: 1fr; }
+}

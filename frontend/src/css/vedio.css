@@ -1,0 +1,28 @@
+.video-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+ 
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+   margin-top: 76px;
+ 
+}
+
+
+
+
+@media (max-width: 768px) {
+  .video-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .video-overlay p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,167 @@
+/* ===============================
+   CONTAINER
+================================ */
+.offer-container {
+  position: fixed;
+  right: 0;
+  bottom: 120px;
+  z-index: 9999;
+  display: flex;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===============================
+   VERTICAL TAB
+================================ */
+.offer-tab {
+    
+  width: 52px;
+  height: 320px;
+  background: linear-gradient(180deg, #111, #333);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 12px;
+}
+
+.tab-arrow {
+  font-size: 18px;
+}
+
+/* ===============================
+   OFFER PANEL
+================================ */
+.offer-panel {
+  width: 520px;
+  height: 320px;
+  background: linear-gradient(135deg, #fff5f7, #ffe3ea);
+  animation: slideIn 0.4s ease;
+  box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.offer-content {
+  padding: 24px 28px;
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.text-block h2 {
+  font-size: 14px;
+  color: #555;
+  margin: 6px 0;
+}
+
+.text-block h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #111;
+}
+
+/* ===============================
+   BADGE
+================================ */
+.badge {
+  display: inline-block;
+  background: #ff3f6c;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ===============================
+   DESCRIPTION
+================================ */
+.desc {
+  font-size: 14px;
+  color: #555;
+  margin: 14px 0;
+  max-width: 320px;
+}
+
+
+
+/* ===============================
+   BUTTON
+================================ */
+.signup-btn {
+  background: #ff3f6c;
+  border: none;
+  color: #fff;
+  padding: 14px 22px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #e7335d;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   TERMS
+================================ */
+.terms {
+  font-size: 11px;
+  color: #777;
+  margin-top: 6px;
+}
+
+/* ===============================
+   IMAGE
+================================ */
+.image-block img {
+  width: 140px;
+  height: auto;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  .offer-panel {
+    width: 260px;
+    height: auto;
+  }
+
+  .top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-block img {
+    width: 100px;
+  }
+}
+    

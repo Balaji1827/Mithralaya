@@ -1,0 +1,197 @@
+/* ============================================================
+   Razorpay payment step — polished design.
+   Import this ONCE in CheckoutPage.jsx (already added there):
+     import '../css/checkout-payment.css';
+   Colors match the Bullrise brand brown (#8a5a2a).
+   ============================================================ */
+
+:root {
+  --br-brown: #8a5a2a;
+  --br-brown-dark: #6f4620;
+  --br-brown-light: #f7f0e8;
+  --br-ink: #22180e;
+  --br-muted: #8b7a66;
+  --br-green: #1e7d3c;
+}
+
+/* ---- main card ---- */
+.pay-online-card {
+  background: #fff;
+  border: 1px solid #eadfd2;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(138, 90, 42, 0.08);
+}
+
+.pay-online-head {
+  padding: 20px 22px 16px;
+  background: linear-gradient(135deg, var(--br-brown-light) 0%, #fdfaf6 60%);
+  border-bottom: 1px solid #f0e6d9;
+}
+
+.pay-online-title strong {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--br-ink);
+  margin: 6px 0 2px;
+}
+
+.pay-online-title p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--br-muted);
+}
+
+.pay-online-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--br-green);
+  background: #e8f5ec;
+  border: 1px solid #cdead7;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+/* ---- method grid ---- */
+.pay-methods-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 16px 22px;
+}
+
+@media (max-width: 560px) {
+  .pay-methods-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pay-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #f0e6d9;
+  border-radius: 10px;
+  background: #fffdfa;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.pay-method:hover {
+  border-color: var(--br-brown);
+  box-shadow: 0 3px 12px rgba(138, 90, 42, 0.12);
+  transform: translateY(-1px);
+}
+
+.pay-method-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: var(--br-brown);
+  background: var(--br-brown-light);
+}
+
+.pay-method strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--br-ink);
+  line-height: 1.2;
+}
+
+.pay-method small {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--br-muted);
+  margin-top: 2px;
+}
+
+/* ---- footer strip ---- */
+.pay-online-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-size: 0.76rem;
+  color: var(--br-muted);
+  background: #faf6f0;
+  border-top: 1px solid #f0e6d9;
+}
+
+.pay-online-foot svg {
+  flex: 0 0 auto;
+  color: var(--br-green);
+}
+
+/* ---- pay button ---- */
+.pay-razorpay-btn {
+  background: linear-gradient(135deg, var(--br-brown) 0%, var(--br-brown-dark) 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 14px 18px !important;
+  cursor: pointer;
+  transition: filter 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 6px 18px rgba(138, 90, 42, 0.35);
+}
+
+.pay-razorpay-btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(138, 90, 42, 0.45);
+}
+
+.pay-razorpay-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.pay-btn-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* spinner while placing */
+.pay-btn-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: pay-spin 0.7s linear infinite;
+}
+
+@keyframes pay-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---- secure note under the button ---- */
+.pay-secure-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  font-size: 0.72rem;
+  color: var(--br-muted);
+}
+
+.pay-secure-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--br-green);
+  box-shadow: 0 0 0 3px rgba(30, 125, 60, 0.15);
+}

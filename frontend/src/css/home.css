@@ -1,0 +1,763 @@
+.home-page {
+  margin-top: 90px;
+  /* background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png"); */
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fef3c7, #e5e7eb);
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.hero-image {
+  background: radial-gradient(circle at top, #111, #111827);
+}
+
+/* HERO SLIDER */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Each slide */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.03);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* dark gradient overlay for readable text */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0));
+}
+
+/* Text content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding-left: 3rem;
+  max-width: 480px;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.hero-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+  opacity: 0.9;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* You already have .btn-primary / .btn-secondary; if not: */
+.btn-one {
+  background: #494949;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-two {
+  background: #fff;
+  color: #111827;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* Arrows */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 24, 39, 0.65);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 3;
+}
+
+.hero-arrow-left {
+  left: 0.75rem;
+}
+
+.hero-arrow-right {
+  right: 0.75rem;
+}
+
+/* Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.hero-dot.active {
+  width: 16px;
+}
+
+.home-page {
+  margin-top: 90px;
+}
+
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fef3c7, #e5e7eb);
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.hero-image {
+  background: radial-gradient(circle at top, #111, #111827);
+}
+
+/* HERO SLIDER */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Each slide */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.03);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* dark gradient overlay for readable text */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0));
+}
+
+/* Text content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding-left: 3rem;
+  max-width: 480px;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.hero-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+  opacity: 0.9;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* You already have .btn-primary / .btn-secondary; if not: */
+.btn-one {
+  background: #494949;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-two {
+  background: #fff;
+  color: #111827;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* Arrows */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 24, 39, 0.65);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 3;
+}
+
+.hero-arrow-left {
+  left: 0.75rem;
+}
+
+.hero-arrow-right {
+  right: 0.75rem;
+}
+
+/* Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.hero-dot.active {
+  width: 16px;
+  background: #facc15;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 380px;
+    /* Taller for mobile to fit content */
+    border-radius: 0;
+  }
+
+  .hero-banner {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .hero-image {
+    display: none;
+    /* Hide side image on mobile */
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+    max-width: 100%;
+    text-align: center;
+    /* Center text on mobile */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-cta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* -----------------------------------------------------------------catagery-------------------------- */
+/* NEW ARRIVALS HEADER + SUBTITLE */
+
+.new-arrivals-header {
+  text-align: center;
+}
+
+.new-arrivals-header h2 {
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+
+.new-arrivals-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* FILTER PILLS ROW */
+
+.new-arrivals-filters {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1rem 0 1.3rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.new-arrivals-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.new-arrivals-decor {
+  height: 80px;
+}
+
+/* Base pill */
+.new-filter-pill {
+  border-radius: 999px;
+  padding: 0.45rem 1.2rem;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  /* Keep text on one line */
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  height: auto;
+  min-height: 40px;
+  width: 150px;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* Active pill (black with yellow text like screenshot) */
+.new-filter-pill.active {
+    background: linear-gradient(90deg, #000000, #000000);
+
+  border-color: none;
+  color: white;
+  font-weight: 700;
+}
+
+/* Hover state for non-active pills */
+.new-filter-pill:not(.active):hover {
+  border-color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .new-filter-pill {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+.no-new-arrivals {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.1rem;
+  color: #666;
+  background: #fafafa;
+  border-radius: 8px;
+  margin: 0 20px;
+}
+
+.explore-more-button {
+  width: 150px;
+  height: 50px;
+
+  background: linear-gradient(
+    90deg,
+    #81502d,
+    #97582b,
+    #9c5a1d,
+    #ad7d35
+  );
+
+  color: #ffffff;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.explore-more-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(45, 27, 14, 0.35);
+}
+
+.no-new-arrivals {
+  background-color: white;
+}
+
+@media (max-width: 480px) {
+
+  /* PAGE */
+  .home-page {
+    margin-top: 70px;
+  }
+
+  /* ================= HERO SLIDER ================= */
+
+  .hero-slider {
+    height: 320px;
+  }
+
+  .hero-content {
+    padding: 1.2rem 1rem;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 1.45rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.5rem;
+
+  }
+
+  .btn-one,
+  .btn-two {
+    width: 150px;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  /* arrows smaller for mobile */
+  .hero-arrow {
+    width: 26px;
+    height: 26px;
+    font-size: 1rem;
+  }
+
+  /* dots */
+  .hero-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .hero-dot.active {
+    width: 12px;
+  }
+
+
+  /* ================= NEW ARRIVALS ================= */
+
+  .new-arrivals-header h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .new-arrivals-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .new-arrivals-filters {
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: 0.8rem 0 1rem;
+    flex-wrap: wrap;
+  }
+
+  .new-filter-pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.9rem;
+    min-height: 36px;
+    width: auto;
+  }
+
+  /* ================= EMPTY STATE ================= */
+
+  .no-new-arrivals {
+    font-size: 0.9rem;
+    padding: 25px 15px;
+    margin: 0 10px;
+  }
+
+  .no-new-arrivals img {
+    width: fit-content;
+  }
+
+
+}
+
+
+/* ================= CATEGORY STRIP ================= */
+/* ===== Category Strip: Sarees & Churidar Tops ===== */
+.category-strip {
+  background-color: #ffffff;
+  padding: 48px 24px;
+  margin: 32px 0;
+}
+
+.category-strip-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.category-strip-header .ticket-title {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #b3486b; /* pink/maroon accent */
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.category-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .category-icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .category-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+.category-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  padding: 24px 12px 0;
+  border-radius: 10px;
+  /* soft pastel-pink to white gradient card, like the reference layout */
+  background: linear-gradient(180deg, #f8d7e3 0%, #fdf3f6 55%, #ffffff 100%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.category-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(179, 72, 107, 0.18);
+}
+
+.category-icon-label {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.category-icon img {
+  width: 100%;
+  max-width: 220px;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+    .category-icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-icon img {
+        height: 320px;
+    }
+
+    .ticket-title {
+        font-size: 28px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 576px) {
+    .category-strip {
+        padding: 40px 15px;
+    }
+
+    .category-icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .category-icon img {
+        height: 220px;
+    }
+
+    .ticket-title {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+}
+.view-all-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 220px;   /* Change to any width */
+    margin: 8px auto 0;
+
+    padding: 15px 0;
+    border: none;
+    border-top: 1px solid #eee;
+    background: none;
+    color: #111;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.view-all-link:hover {
+  color: #ffffff;
+}
+
+.view-all-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.view-all-link:hover .view-all-arrow {
+  transform: translateX(4px);
+}

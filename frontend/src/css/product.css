@@ -1,0 +1,685 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.product-list-page {
+  margin-top: 100px;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin: 0 0 20px 50px;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 15px;
+    margin-right: 15px;
+    gap: 1rem;
+  }
+
+  .product-card-inner {
+    padding: 0.25rem;
+  }
+
+  .product-image-wrapper {
+    height: 200px;
+    /* Reduced height for mobile */
+  }
+
+  .product-price-row {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .product-list-page {
+    margin-top: 80px;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+    margin: 0 0 14px 15px;
+  }
+}
+
+
+.grid-section {
+  margin: 20px;
+}
+
+.product-card-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.badge-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wishlist-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.badge {
+  pointer-events: auto;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-left: -10px;
+}
+
+/* NEW ARRIVAL */
+.badge-new {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: #002b36;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+  animation: badgeNewBounce 0.6s ease-out;
+  transform-origin: center;
+}
+
+@keyframes badgeNewBounce {
+  0% {
+    transform: scale(0.6) translateY(-4px);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.12) translateY(0);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale(0.96);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* BEST SELLER */
+.badge-best {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-best::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.0),
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.0));
+  transform: skewX(-20deg);
+  animation: badgeBestShine 2s linear infinite;
+}
+
+@keyframes badgeBestShine {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+
+  45% {
+    transform: translateX(160%) skewX(-20deg);
+  }
+
+  100% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+}
+
+
+
+/* TRENDING */
+.badge-trending {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(255, 81, 47, 0.6);
+  position: relative;
+  animation: badgeTrendingPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes badgeTrendingPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 81, 47, 0.7);
+    transform: scale(1);
+  }
+
+  60% {
+    box-shadow: 0 0 0 10px rgba(255, 81, 47, 0);
+    transform: scale(1.04);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 81, 47, 0);
+    transform: scale(1);
+  }
+}
+
+
+/* Wishlist button */
+.wishlist-btn {
+  pointer-events: auto;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.wishlist-btn:hover {
+  background: #ff3b3b;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.wishlist-btn.wishlist-active {
+  background: #ff3b3b;
+  color: #ffffff;
+  transform: scale(1.12);
+  box-shadow: 0 6px 14px rgba(255, 59, 59, 0.45);
+}
+
+.wishlist-btn.wishlist-active {
+  animation: wishlist-pop 0.35s ease;
+}
+
+@keyframes wishlist-pop {
+  0% {
+    transform: scale(0.9);
+  }
+
+  60% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1.12);
+  }
+}
+
+
+.wishlist-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.empty-wishlist-img {
+  margin-top: -20px;
+}
+
+.wishlist-card-wrapper .product-card-inner {
+  margin-bottom: -50px;
+}
+
+.wishlist-remove {
+  background-color: #dd243a;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 80px;
+  margin-left: 230px;
+  position: relative;
+  margin-top: -10px;
+}
+
+.user-empty-state {
+  font-size: 20px
+}
+
+
+
+.product-image {
+  width: 100%;
+  display: block;
+}
+
+.product-image.placeholder {
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.product-info {
+  padding: 0.6rem 0.3rem 0.4rem;
+}
+
+.product-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-subcategory {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.product-price-row .price {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.product-price-row .mrp {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.product-price-row .discount {
+  font-size: 0.8rem;
+  color: #16a34a;
+}
+
+.product-details-page .product-details-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .product-details-page .product-details-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.product-card-inner {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-image-wrapper {
+  overflow: hidden;
+  background: #f3f4f6;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+}
+
+.product-image.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.product-card:hover {
+  text-decoration: none;
+}
+
+.loading,
+.no-products {
+  margin: 150px;
+}
+
+@media (max-width: 480px) {
+  .loading,
+  .no-products {
+    margin: 60px 16px;
+  }
+}
+
+.coming-soon-box {
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f8f8;
+  border-radius: 12px;
+  margin-top: 10px;
+  border: 2px dashed #ccc;
+}
+
+.coming-soon-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #444;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .coming-soon-box {
+    padding: 40px 16px;
+  }
+
+  .coming-soon-text {
+    font-size: 20px;
+  }
+}
+
+.browse-product {
+  height: 50px;
+  width: 200px;
+  border: none;
+  background-color: black;
+  font-size: 20px;
+  border-radius: 999px;
+  color: #facc15;
+  font-weight: 500;
+}
+
+.browse-product:hover {
+  transform: scale(1.05);
+  transition-duration: 0.25s;
+  box-shadow: 3px 3px rgb(78, 78, 78);
+  background-color: rgb(37, 37, 37);
+  color: #facc15;
+}
+
+.track-order-page {
+  margin-top: 100px;
+}
+
+@media (max-width: 480px) {
+  .track-order-page {
+    margin-top: 80px;
+  }
+}
+
+.track-page {
+  background: #f4f4f4;
+  min-height: 90vh;
+  padding: 2rem 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+.track-container {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.track-container h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.subtitle {
+  margin-top: 0.3rem;
+  color: #666;
+}
+
+.track-input {
+  margin-top: 1.2rem;
+  width: 100%;
+  max-width: 500px;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.track-input:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.loading {
+  margin-top: 1rem;
+  color: #333;
+}
+
+.error {
+  margin-top: 1rem;
+  color: red;
+  font-weight: 600;
+}
+
+.tracking-wrapper {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.status-badge {
+  padding: 0.25rem 0.6rem;
+  margin-left: 6px;
+  color: #000000;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge.processing {
+  background: #0066ff;
+}
+
+.status-badge.shipped {
+  background: #ff9800;
+}
+
+.status-badge.delivered {
+  background: #4caf50;
+}
+
+.status-badge.cancelled {
+  background: #d32f2f;
+}
+
+.item-card .item-row {
+  display: flex;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item-card img {
+  width: 75px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.item-card h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.shipping-card p {
+  margin: 0.3rem 0;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  .track-container h1 {
+    font-size: 1.7rem;
+  }
+
+  .item-card .item-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .track-page {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+.category-page {
+  padding-top: 100px;
+  min-height: 80vh;
+}
+
+@media (max-width: 480px) {
+  .category-page {
+    padding-top: 80px;
+  }
+}
+
+.no-products {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.2rem;
+  color: #666;
+  width: 100%;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.three-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.three-dots div {
+  width: 12px;
+  height: 12px;
+  background-color: #111;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.three-dots div:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.three-dots div:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px){
+  .product-grid {
+    /* FIX: this was `repeat(150px, 1fr)`, which is invalid grid syntax
+       (repeat()'s first argument must be a count, or auto-fill/
+       auto-fit — not a length). Browsers drop the whole declaration
+       when they hit an invalid value, so this breakpoint silently did
+       nothing, and phones just kept whatever the 768px rule set (2
+       columns). Two columns is still the right call at this width, so
+       this now says so explicitly with valid syntax and tighter
+       spacing to suit a smaller screen. */
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 0.5rem;
+  }
+  
+  .section-divider{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .section-divider-bestseller{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .product-price-row {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .grid-section{
+    margin: 10px;
+  }
+
+  .wishlist-remove {
+    display: none
+  }
+}

@@ -1,0 +1,318 @@
+.exclusive-strip.premium {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.exclusive-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.exclusive-header h2 {
+  font-size: clamp(22px, 4.2vw, 34px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+
+  background: linear-gradient(
+    90deg,
+    #2d1b0e,
+    #5c3a21,
+    #9c5a1d,
+    #000000
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.exclusive-header p {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
+
+/* Slider */
+.exclusive-slider {
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.exclusive-viewport {
+  overflow: visible;
+}
+
+.exclusive-track {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+/* Cards */
+.exclusive-card {
+  flex: 0 0 calc(25% - 1rem);
+  /* 4 cards desktop */
+  border-radius: 20px;
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.exclusive-card.active {
+  transform: scale(1.15) translateY(-10px);
+  z-index: 3;
+  opacity: 1;
+}
+
+.exclusive-card.side {
+  transform: scale(0.9);
+  z-index: 2;
+  opacity: 0.85;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.exclusive-card-bg {
+  position: relative;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.exclusive-card-bg:hover {
+  transform: scale(1.05) rotateY(1deg);
+}
+
+.exclusive-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 100%);
+  border-radius: 20px;
+}
+
+.exclusive-card-content {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.exclusive-card-content h3 {
+  margin: 0;
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.exclusive-card-content p {
+  margin: 0;
+  font-size: clamp(12px, 1.1vw, 13.5px);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.exclusive-cta {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #000000, #000000, #000000);
+  color: #fff;
+  font-size: clamp(12px, 1.1vw, 13.5px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exclusive-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(14, 13, 13, 0.6);
+}
+
+.exclusive-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.exclusive-arrow.left {
+  left: 0.5rem;
+}
+
+.exclusive-arrow.right {
+  right: 0.5rem;
+}
+
+.exclusive-arrow:hover {
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.exclusive-arrow:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+.exclusive-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(19, 18, 18, 0.4);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.active-dot {
+  background: #000000;
+  transform: scale(1.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exclusive-track,
+  .exclusive-card,
+  .exclusive-card-bg,
+  .exclusive-cta,
+  .exclusive-arrow,
+  .dot {
+    transition: none !important;
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+   Mobile -> Tablet -> Laptop -> Large desktop / TV
+=========================== */
+
+/* Large desktop / TV: give the strip more room to breathe and slightly
+   taller cards instead of reusing the same size as a 1280px laptop */
+@media (min-width: 1600px) {
+  .exclusive-strip.premium {
+    max-width: 1680px;
+  }
+
+  .exclusive-card-bg {
+    height: 400px;
+  }
+}
+
+/* Laptop range (1025px-1439px): still 4 cards per row (JS keeps
+   cardsPerView at 4 above 1024px), but each card is narrower here than
+   on a big desktop, so a slightly shorter card looks better proportioned */
+@media (max-width: 1439px) and (min-width: 1025px) {
+  .exclusive-card-bg {
+    height: 320px;
+  }
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 1024px) {
+  .exclusive-strip.premium {
+    margin: 3rem auto;
+  }
+
+  .exclusive-card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  .exclusive-card-bg {
+    height: 300px;
+  }
+
+  .exclusive-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile: 1 card per row, full width */
+@media (max-width: 640px) {
+  .exclusive-strip.premium {
+    margin: 2.25rem auto;
+    padding: 0 0.75rem;
+  }
+
+  .exclusive-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .exclusive-slider {
+    padding: 1.25rem 0;
+  }
+
+  .exclusive-card {
+    flex: 0 0 calc(100% - 0.5rem);
+  }
+
+  .exclusive-card-bg {
+    height: 68vw;
+    max-height: 320px;
+    min-height: 220px;
+  }
+
+  .exclusive-card.active {
+    transform: scale(1.04) translateY(-4px);
+  }
+
+  .exclusive-card.side {
+    transform: scale(0.96);
+  }
+
+  .exclusive-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+  }
+
+  .exclusive-arrow.left {
+    left: 0.25rem;
+  }
+
+  .exclusive-arrow.right {
+    right: 0.25rem;
+  }
+
+  .exclusive-card-content {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .exclusive-card-bg {
+    height: 74vw;
+  }
+}

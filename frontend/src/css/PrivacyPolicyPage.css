@@ -1,0 +1,416 @@
+/* ==========================================
+   Bullrise Privacy Policy
+   Premium Brown Theme
+========================================== */
+
+/* Page */
+
+.privacy-page {
+  background: #f6f2ec;
+  min-height: 100vh;
+}
+
+/* Hero */
+
+.privacy-hero {
+  height: 420px;
+  background:
+    linear-gradient(rgba(40, 25, 15, .65), rgba(40, 25, 15, .65)),
+    linear-gradient(135deg, #4E342E, #6D4C41, #8D6E63);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.privacy-hero::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .05);
+  top: -180px;
+  right: -120px;
+}
+
+.privacy-hero::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .04);
+  bottom: -160px;
+  left: -120px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  width: 90%;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 40px;
+  background: #C89B3C;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 19px;
+  line-height: 1.8;
+  opacity: .95;
+}
+
+.last-updated {
+  margin-top: 30px;
+  display: inline-block;
+  background: white;
+  color: #4E342E;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* Main Card */
+
+.policy-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: -90px auto 80px;
+  background: white;
+  border-radius: 24px;
+  padding: 60px;
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .12);
+}
+
+/* Hide duplicate title */
+
+.policy-title,
+.policy-updated {
+  display: none;
+}
+
+/* Headings */
+
+.policy-container h2 {
+  margin-top: 45px;
+  margin-bottom: 18px;
+  color: #4E342E;
+  font-size: 30px;
+  position: relative;
+  padding-left: 22px;
+}
+
+.policy-container h2::before {
+  content: "";
+  width: 8px;
+  height: 100%;
+  background: #C89B3C;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+}
+
+.policy-container h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #6D4C41;
+  font-size: 22px;
+}
+
+/* Text */
+
+.policy-container p {
+
+  font-size: 16px;
+  color: #666;
+  line-height: 2;
+}
+
+.policy-container ul {
+
+  margin: 18px 0 20px 30px;
+}
+
+.policy-container li {
+
+  margin-bottom: 12px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.policy-container li::marker {
+
+  color: #C89B3C;
+}
+
+/* Links */
+
+.policy-container a {
+
+  color: #8B5E3C;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.policy-container a:hover {
+
+  color: #C89B3C;
+}
+
+/* Hover */
+
+.policy-container h2 {
+
+  transition: .3s;
+}
+
+.policy-container h2:hover {
+
+  color: #C89B3C;
+}
+
+/* Mobile */
+
+@media(max-width:768px) {
+
+  .hero-content h1 {
+
+    font-size: 38px;
+  }
+
+  .hero-content p {
+
+    font-size: 16px;
+  }
+
+  .policy-container {
+
+    margin-top: -60px;
+    padding: 30px;
+  }
+
+  .policy-container h2 {
+
+    font-size: 24px;
+  }
+
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fdf8f3;
+}
+
+.policy-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+  border-top: 8px solid #C89B3C;
+}
+
+/* ================= Title ================= */
+
+.policy-title {
+  font-size: 48px;
+  color: #4E342E;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.policy-updated {
+  text-align: center;
+  display: block;
+  margin-bottom: 40px;
+  color: #8B5E3C;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+/* ================= Headings ================= */
+
+.policy-container h2 {
+  margin-top: 40px;
+  margin-bottom: 18px;
+  color: #4E342E;
+  font-size: 28px;
+  padding-left: 16px;
+  border-left: 5px solid #C89B3C;
+}
+
+.policy-container h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #6D4C41;
+  font-size: 21px;
+}
+
+/* ================= Paragraph ================= */
+
+.policy-container p {
+  color: #666;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* ================= Lists ================= */
+
+.policy-container ul {
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
+.policy-container li {
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.policy-container li::marker {
+  color: #8B5E3C;
+}
+
+/* ================= Links ================= */
+
+.policy-container a {
+  color: #8B5E3C;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.policy-container a:hover {
+  color: #C89B3C;
+  text-decoration: underline;
+}
+
+/* ================= Strong ================= */
+
+.policy-container strong {
+  color: #4E342E;
+}
+
+/* ================= Divider ================= */
+
+.policy-container h2:not(:first-child) {
+  padding-top: 15px;
+}
+
+/* ================= Scrollbar ================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7efe7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B5E3C;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6D4C41;
+}
+
+/* ================= Hover Effect ================= */
+
+.policy-container h2 {
+  transition: .3s;
+}
+
+.policy-container h2:hover {
+  color: #C89B3C;
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:992px) {
+
+  .policy-container {
+    margin: 30px 20px;
+    padding: 35px;
+  }
+
+  .policy-title {
+    font-size: 38px;
+  }
+
+}
+
+@media(max-width:768px) {
+
+  .policy-container {
+    padding: 25px;
+    margin: 20px 15px;
+  }
+
+  .policy-title {
+    font-size: 30px;
+  }
+
+  .policy-updated {
+    font-size: 15px;
+  }
+
+  .policy-container h2 {
+    font-size: 22px;
+  }
+
+  .policy-container h3 {
+    font-size: 18px;
+  }
+
+  .policy-container p,
+  .policy-container li {
+    font-size: 15px;
+  }
+
+}
+
+@media(max-width:480px) {
+
+  .policy-title {
+    font-size: 26px;
+  }
+
+  .policy-container {
+    padding: 20px;
+  }
+
+  .policy-container h2 {
+    font-size: 20px;
+  }
+
+  .policy-container h3 {
+    font-size: 17px;
+  }
+
+}

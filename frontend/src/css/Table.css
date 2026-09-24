@@ -1,0 +1,236 @@
+/* ===========================================================
+   REUSABLE TABLE — self-contained styles for the generic
+   Table.jsx wrapper. All classes use a unique "rt-" prefix so
+   this component can be dropped into any page without colliding
+   with page-specific table styles.
+=========================================================== */
+
+.rt-wrapper {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.rt-table-scroll {
+  width: 100%;
+}
+
+.rt-table {
+  width: max-content !important;
+  min-width: 100% !important;
+  margin: 0 !important;
+  border-collapse: collapse;
+}
+
+.rt-thead {
+  background: #111827;
+}
+
+.rt-header-row th {
+  text-align: left !important;
+  border: none !important;
+}
+
+.rt-th {
+  padding: 14px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-align: left !important;
+  vertical-align: top !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rt-th-label {
+  vertical-align: top;
+}
+
+.rt-sort-icon {
+  display: inline-block;
+  margin-left: 6px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  vertical-align: middle;
+}
+
+.rt-sort-icon.asc {
+  border-bottom: 5px solid #facc15;
+}
+
+.rt-sort-icon.desc {
+  border-top: 5px solid #facc15;
+}
+
+.rt-row {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s ease;
+}
+
+.rt-row:last-child {
+  border-bottom: none;
+}
+
+.rt-row:hover {
+  background: #f9fafb;
+}
+
+/* Content aligns to the start on both axes: left horizontally,
+   top vertically — top-alignment matters once any cell wraps to
+   multiple lines (long review text, stacked name + category path),
+   so short single-line cells in the same row don't look vertically
+   centered against a taller neighbor. */
+.rt-cell {
+  padding: 13px 16px;
+  font-size: 13.5px;
+  text-align: left !important;
+  vertical-align: top;
+  border: none !important;
+}
+
+.rt-empty {
+  padding: 28px 16px;
+  text-align: center;
+  font-weight: 500;
+  color: #6b7280;
+  border: none !important;
+}
+
+/* ---------- Pagination bar ---------- */
+.rt-pagination-bar {
+  margin: 0;
+  padding: 14px 16px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  position: sticky;
+  left: 0;
+}
+
+.rt-pagination-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.rt-pagination-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rt-pagination-group-end {
+  justify-content: flex-end;
+}
+
+.rt-pagination-label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.rt-page-display,
+.rt-page-input {
+  width: 52px;
+  height: 32px;
+  padding: 0 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.rt-page-display:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.rt-page-input:focus {
+  outline: none;
+  border-color: #4a6cf7;
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
+}
+
+.rt-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.rt-pagination-controls .rt-arrow {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  border-radius: 50% !important;
+  background-color: #fff !important;
+  border: 1px solid #d1d5db !important;
+  color: #374151 !important;
+  cursor: pointer;
+  font-size: 16px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.rt-pagination-controls .rt-arrow:hover {
+  background-color: #4a6cf7 !important;
+  border-color: #4a6cf7 !important;
+  color: #fff !important;
+}
+
+.rt-pagination-controls .rt-arrow-left {
+  transform: rotate(180deg);
+}
+
+.rt-pagination-controls .rt-arrow-left:hover {
+  transform: rotate(180deg) scale(1.05);
+}
+
+.rt-pagination-controls .rt-arrow-right:hover {
+  transform: scale(1.05);
+}
+
+.rt-pagination-controls .rt-arrow.disabled {
+  opacity: 0.35 !important;
+  pointer-events: none;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 700px) {
+  .rt-pagination-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rt-pagination-group-end {
+    justify-content: space-between;
+  }
+
+  .rt-th,
+  .rt-cell {
+    padding: 10px 12px;
+    font-size: 12.5px;
+  }
+}

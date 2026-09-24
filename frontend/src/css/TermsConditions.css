@@ -1,0 +1,337 @@
+/* ===========================
+   Bullrise Terms & Conditions
+   Premium Brown Theme
+=========================== */
+
+
+.terms-page{
+    background:#fdf8f3;
+    min-height:100vh;
+    color:#4E342E;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ================= Hero ================= */
+
+.terms-hero{
+    background:linear-gradient(135deg,#4E342E,#6D4C41,#8D6E63);
+    color:#fff;
+    padding:90px 20px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    margin-top: 100px;
+}
+
+.terms-hero::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:rgba(255,255,255,.06);
+    border-radius:50%;
+    top:-120px;
+    right:-120px;
+}
+
+.terms-hero::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:rgba(255,255,255,.05);
+    border-radius:50%;
+    left:-80px;
+    bottom:-80px;
+}
+
+.terms-hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.hero-tag{
+    display:inline-block;
+    background:#C89B3C;
+    color:#fff;
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-bottom:25px;
+}
+
+.terms-hero h1{
+    font-size:52px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.terms-hero p{
+    max-width:760px;
+    margin:auto;
+    line-height:1.9;
+    font-size:18px;
+    color:#f5f5f5;
+}
+
+.updated-date{
+    display:inline-block;
+    margin-top:30px;
+    background:#fff;
+    color:#4E342E;
+    padding:12px 25px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+/* ================= Content ================= */
+
+.terms-content{
+    padding:70px 0;
+}
+
+/* ================= Cards ================= */
+
+.term-card{
+    background:#fff;
+    border-radius:18px;
+    margin-bottom:28px;
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+    padding:30px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.35s;
+    border-left:6px solid #C89B3C;
+}
+
+.term-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.term-icon{
+    min-width:70px;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#C89B3C,#D6A84E);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    box-shadow:0 8px 20px rgba(200,155,60,.35);
+}
+
+.term-body{
+    flex:1;
+}
+
+.term-body h2{
+    color:#4E342E;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+.term-body p{
+    color:#666;
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+.term-body ul{
+    padding-left:22px;
+}
+
+.term-body li{
+    margin-bottom:12px;
+    color:#666;
+    line-height:1.9;
+}
+
+.term-body li::marker{
+    color:#8B5E3C;
+}
+
+.term-body strong{
+    color:#4E342E;
+}
+
+/* ================= Contact ================= */
+
+.contact-card{
+    margin-top:60px;
+    background:linear-gradient(135deg,#4E342E,#6D4C41);
+    color:#fff;
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.contact-card h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.contact-card p{
+    color:#ececec;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.contact-grid{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.contact-grid div{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#FFF8F0;
+    color:#4E342E;
+    padding:18px 28px;
+    border-radius:12px;
+    min-width:260px;
+    justify-content:center;
+    font-weight:600;
+    transition:.3s;
+    border:1px solid #D8B78A;
+}
+
+.contact-grid div:hover{
+    background:#C89B3C;
+    color:#fff;
+    transform:translateY(-4px);
+}
+
+.contact-grid svg{
+    font-size:22px;
+    color:#C89B3C;
+}
+
+.contact-grid div:hover svg{
+    color:#fff;
+}
+
+/* ================= Scrollbar ================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#F5EBDD;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#8B5E3C;
+    border-radius:30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#6D4C41;
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:992px){
+
+.term-card{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.term-body ul{
+    text-align:left;
+}
+
+}
+
+@media(max-width:768px){
+
+.terms-hero{
+    padding:65px 20px;
+}
+
+.terms-hero h1{
+    font-size:34px;
+}
+
+.terms-hero p{
+    font-size:16px;
+}
+
+.updated-date{
+    font-size:14px;
+}
+
+.term-card{
+    padding:22px;
+}
+
+.term-icon{
+    width:60px;
+    height:60px;
+    min-width:60px;
+    font-size:24px;
+}
+
+.term-body h2{
+    font-size:22px;
+}
+
+.term-body p,
+.term-body li{
+    font-size:15px;
+}
+
+.contact-card{
+    padding:35px 20px;
+}
+
+.contact-card h2{
+    font-size:30px;
+}
+
+.contact-grid{
+    flex-direction:column;
+}
+
+.contact-grid div{
+    width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+.hero-tag{
+    font-size:12px;
+}
+
+.terms-hero h1{
+    font-size:28px;
+}
+
+.term-body h2{
+    font-size:20px;
+}
+
+.contact-card h2{
+    font-size:26px;
+}
+
+}

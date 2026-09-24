@@ -1,0 +1,454 @@
+/* ===========================================================
+   PRODUCT CARD — self-contained styles for ProductCard.jsx only.
+   All classes use a unique "pc-" prefix so they can never collide
+   with unrelated styles elsewhere in the app.
+
+   RESPONSIVE STRATEGY (pakka mobile-first):
+   1. The card's own width drives its sizing, not the viewport.
+      In a grid, a "mobile" viewport can still render 2-3 columns,
+      so viewport media queries alone guess wrong. Container
+      queries (@container) look at the CARD's actual box, so the
+      card looks right whether it's 160px wide on a phone or
+      380px wide on desktop — this is what makes it "pakka"
+      responsive instead of just "usually right".
+   2. Media queries are kept as a safety-net fallback for the rare
+      browser without container-query support (older Safari/iOS
+      before 16, old Android WebView).
+   3. Image sizing uses `aspect-ratio` (modern) with a padding-box
+      fallback for browsers that don't support it, so the image
+      never collapses to 0 height or stretches oddly.
+   4. Explicit min-width / min-height guards are set on the card
+      shell so it never gets crushed to an unreadable sliver in a
+      very narrow column (e.g. a 2-up grid on a 320px phone).
+=========================================================== */
+
+.pc-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  min-width: 140px;          /* never let the grid crush it unreadably */
+  max-width: 480px;          /* never let it balloon on ultra-wide TVs */
+  container-type: inline-size;   /* card now responds to ITS OWN width */
+  container-name: pc-card;
+}
+
+.pc-card:hover {
+  text-decoration: none;
+}
+
+.pc-card-inner {
+  width: 100%;
+  height: auto;               /* grows to fit content, never clipped */
+  min-height: 220px;          /* guard rail so short-name cards don't look broken */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #ececec;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.pc-card-inner:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+}
+
+.pc-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5;         /* modern browsers: fluid, no fixed px */
+  overflow: hidden;
+  position: relative;
+  background: #f8f8f8;
+  border-radius: 18px 18px 0 0;
+  flex-shrink: 0;
+}
+
+/* Fallback for browsers without aspect-ratio support (pre-2021 Safari,
+   old Android WebView): reproduce the same 4:5 box with the classic
+   padding-top percentage trick so the image area never disappears. */
+@supports not (aspect-ratio: 1 / 1) {
+  .pc-image-wrapper {
+    height: 0;
+    padding-top: 125%; /* 5/4 = 1.25 */
+  }
+
+  .pc-image,
+  .pc-image.pc-placeholder {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.pc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+
+.pc-card-inner:hover .pc-image {
+  transform: scale(1.08);
+}
+
+.pc-image.pc-placeholder,
+.pc-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Badge + wishlist button overlay row */
+.pc-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.pc-badge-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pc-wishlist-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.pc-badge {
+  pointer-events: auto;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* New Arrival badge */
+.pc-badge-new {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: #002b36;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(79, 172, 254, 0.5);
+  animation: pc-badge-new-bounce 0.6s ease-out;
+  transform-origin: center;
+}
+
+@keyframes pc-badge-new-bounce {
+  0% { transform: scale(0.6) translateY(-4px); opacity: 0; }
+  60% { transform: scale(1.12) translateY(0); opacity: 1; }
+  80% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+/* Best Seller badge, with an infinite shine sweep */
+.pc-badge-best {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+
+.pc-badge-best::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -160%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.0),
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.0));
+  transform: skewX(-20deg);
+  animation: pc-badge-best-shine 2s linear infinite;
+}
+
+@keyframes pc-badge-best-shine {
+  0% { transform: translateX(-160%) skewX(-20deg); }
+  45% { transform: translateX(160%) skewX(-20deg); }
+  100% { transform: translateX(-160%) skewX(-20deg); }
+}
+
+/* Trending badge, with a pulsing glow */
+.pc-badge-trending {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 12px rgba(255, 81, 47, 0.6);
+  position: relative;
+  animation: pc-badge-trending-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pc-badge-trending-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 81, 47, 0.7); transform: scale(1); }
+  60% { box-shadow: 0 0 0 10px rgba(255, 81, 47, 0); transform: scale(1.04); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 81, 47, 0); transform: scale(1); }
+}
+
+/* Wishlist heart button — 34px visual size, but the actual tappable
+   area is stretched to 44x44 (Apple/Google's minimum touch target)
+   using an invisible ::before so it's easy to hit on a phone without
+   making the button itself look oversized. */
+.pc-wishlist-btn {
+  pointer-events: auto;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #555;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s ease, color 0.25s ease;
+}
+
+.pc-wishlist-btn::before {
+  content: "";
+  position: absolute;
+  inset: -8px;   /* expands the tap target to ~44-50px without resizing the visible circle */
+}
+
+.pc-wishlist-btn:hover {
+  background: #ff3b3b;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.pc-wishlist-btn.pc-wishlist-active {
+  background: #ff3b3b;
+  color: #ffffff;
+  transform: scale(1.12);
+  box-shadow: 0 6px 14px rgba(255, 59, 59, 0.45);
+  animation: pc-wishlist-pop 0.35s ease;
+}
+
+@keyframes pc-wishlist-pop {
+  0% { transform: scale(0.9); }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1.12); }
+}
+
+.pc-wishlist-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Text area below the image */
+.pc-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 14px 15px 16px;
+}
+
+.pc-name {
+  font-size: clamp(13px, 3.4cqw, 15px);
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+  min-height: 2.8em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pc-subcategory {
+  font-size: 12px;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.pc-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+
+.pc-color {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
+.pc-color-swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.pc-price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.pc-price {
+  font-size: clamp(16px, 4cqw, 20px);
+  font-weight: 700;
+  color: #000;
+}
+
+.pc-mrp {
+  font-size: clamp(12px, 2.8cqw, 15px);
+  color: #999;
+  text-decoration: line-through;
+}
+
+.pc-discount {
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #e8f8eb;
+  color: #008a2e;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-card-inner,
+  .pc-image,
+  .pc-wishlist-btn,
+  .pc-badge-new,
+  .pc-badge-best::after,
+  .pc-badge-trending {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===========================================================
+   CONTAINER-QUERY RESPONSIVE TIERS
+   Driven by the CARD's own rendered width (not the viewport), so
+   these are accurate no matter how many columns the surrounding
+   grid decides to show at a given screen size.
+=========================================================== */
+
+/* Extra-small card (a narrow phone in a 2–3 column grid) */
+@container pc-card (max-width: 170px) {
+  .pc-card-inner { border-radius: 10px; min-height: 190px; }
+  .pc-image-wrapper { border-radius: 10px 10px 0 0; aspect-ratio: 3 / 4; }
+  .pc-info { padding: 8px 9px 10px; gap: 4px; }
+  .pc-name { font-size: 12px; min-height: 2.4em; }
+  .pc-price-row { gap: 5px; }
+  .pc-wishlist-btn { width: 26px; height: 26px; font-size: 11px; }
+  .pc-badge { padding: 3px 8px; font-size: 9px; }
+}
+
+/* Small card (typical single-column phone card, or 3-up tablet) */
+@container pc-card (min-width: 171px) and (max-width: 230px) {
+  .pc-card-inner { border-radius: 12px; }
+  .pc-image-wrapper { border-radius: 12px 12px 0 0; }
+  .pc-info { padding: 10px 11px 12px; gap: 5px; }
+  .pc-name { font-size: 13px; }
+  .pc-wishlist-btn { width: 28px; height: 28px; font-size: 12px; }
+  .pc-badge { padding: 4px 9px; font-size: 9.5px; }
+}
+
+/* Medium card (tablet / small laptop columns) */
+@container pc-card (min-width: 231px) and (max-width: 300px) {
+  .pc-card-inner { border-radius: 14px; }
+  .pc-image-wrapper { border-radius: 14px 14px 0 0; }
+  .pc-info { padding: 12px 13px 14px; }
+  .pc-wishlist-btn { width: 30px; height: 30px; font-size: 13px; }
+}
+
+/* Large card (desktop columns) */
+@container pc-card (min-width: 301px) and (max-width: 380px) {
+  .pc-card-inner { border-radius: 16px; }
+  .pc-image-wrapper { border-radius: 16px 16px 0 0; }
+  .pc-info { padding: 13px 14px 15px; }
+}
+
+/* Extra-large card (wide desktop / TV columns) */
+@container pc-card (min-width: 381px) {
+  .pc-card-inner { border-radius: 22px; }
+  .pc-image-wrapper { border-radius: 22px 22px 0 0; }
+  .pc-info { padding: 18px 20px 20px; }
+  .pc-wishlist-btn { width: 38px; height: 38px; font-size: 17px; }
+}
+
+/* ===========================================================
+   VIEWPORT-MEDIA-QUERY FALLBACK
+   Only kicks in for browsers with no @container support at all
+   (container queries themselves are simply ignored there, so this
+   block is what those browsers will actually use). Kept close to
+   the original breakpoints so behaviour degrades gracefully.
+=========================================================== */
+@supports not (container-type: inline-size) {
+  @media (min-width: 1600px) {
+    .pc-card-inner { border-radius: 22px; }
+    .pc-image-wrapper { border-radius: 22px 22px 0 0; }
+    .pc-info { padding: 18px 20px 20px; }
+    .pc-wishlist-btn { width: 38px; height: 38px; font-size: 17px; }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1439px) {
+    .pc-card-inner { border-radius: 16px; }
+    .pc-image-wrapper { border-radius: 16px 16px 0 0; }
+    .pc-info { padding: 13px 14px 15px; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .pc-card-inner { border-radius: 14px; }
+    .pc-image-wrapper { border-radius: 14px 14px 0 0; }
+    .pc-info { padding: 12px 13px 14px; }
+    .pc-wishlist-btn { width: 30px; height: 30px; font-size: 13px; }
+  }
+
+  @media (max-width: 768px) {
+    .pc-card-inner { border-radius: 12px; }
+    .pc-image-wrapper { border-radius: 12px 12px 0 0; }
+    .pc-info { padding: 10px 11px 12px; gap: 4px; }
+    .pc-name { font-size: 13px; min-height: 2.6em; }
+    .pc-price-row { gap: 6px; }
+    .pc-wishlist-btn { width: 28px; height: 28px; font-size: 12px; }
+    .pc-badge { padding: 4px 9px; font-size: 9.5px; }
+  }
+
+  @media (max-width: 480px) {
+    .pc-card-inner { border-radius: 10px; }
+    .pc-image-wrapper { border-radius: 10px 10px 0 0; aspect-ratio: 3 / 4; }
+    .pc-info { padding: 8px 9px 10px; }
+    .pc-name { font-size: 12.5px; }
+    .pc-price { font-size: 15px; }
+    .pc-price-row { gap: 5px; }
+  }
+}

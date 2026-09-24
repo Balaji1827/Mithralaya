@@ -1,0 +1,329 @@
+/* ==============================
+   Bullrise - Return & Refund Policy
+   Premium Brown Theme
+================================= */
+
+
+.returns-page {
+  background: #fdf8f3;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ==============================
+   Hero Section
+================================= */
+
+.returns-hero {
+  background: linear-gradient(135deg, #4e342e, #6d4c41, #8d6e63);
+  color: #fff;
+  padding: 90px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.returns-hero::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  top: -180px;
+  right: -120px;
+}
+
+.returns-hero::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  bottom: -120px;
+  left: -80px;
+}
+
+.returns-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.returns-hero h1 {
+  font-size: 48px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.returns-hero p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f5f5f5;
+}
+
+.returns-hero span {
+  display: inline-block;
+  margin-top: 30px;
+  background: #c89b3c;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* ==============================
+   Policy Cards
+================================= */
+
+.policy-card {
+  background: #fff;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 18px;
+  border-left: 6px solid #8b5e3c;
+  box-shadow: 0 12px 30px rgba(78,52,46,.10);
+  transition: all .35s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(78,52,46,.18);
+}
+
+.policy-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 25px;
+  color: #4e342e;
+  margin-bottom: 20px;
+}
+
+.policy-card svg {
+  color: #c89b3c;
+  font-size: 24px;
+}
+
+.policy-card p {
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.policy-card ul,
+.policy-card ol {
+  padding-left: 25px;
+}
+
+.policy-card li {
+  margin-bottom: 14px;
+  line-height: 1.9;
+  color: #555;
+}
+
+.policy-card li::marker {
+  color: #8b5e3c;
+  font-weight: bold;
+}
+
+.policy-card strong {
+  color: #4e342e;
+}
+
+/* ==============================
+   Contact Card
+================================= */
+
+.contact-card {
+  margin-top: 45px;
+  background: linear-gradient(135deg,#4e342e,#6d4c41);
+  color: white;
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.contact-card h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.contact-card p {
+  font-size: 17px;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 35px;
+}
+
+.contact-box {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.contact-box div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff8f0;
+  color: #4e342e;
+  padding: 18px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  min-width: 260px;
+  justify-content: center;
+  transition: .3s;
+  border: 1px solid #d8b78a;
+}
+
+.contact-box div:hover {
+  background: #c89b3c;
+  color: white;
+  transform: translateY(-4px);
+}
+
+.contact-box svg {
+  font-size: 22px;
+  color: #c89b3c;
+}
+
+.contact-box div:hover svg {
+  color: white;
+}
+
+/* ==============================
+   Links
+================================= */
+
+a {
+  color: #8b5e3c;
+  text-decoration: none;
+  transition: .3s;
+}
+
+a:hover {
+  color: #c89b3c;
+}
+
+/* ==============================
+   Scrollbar
+================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7efe8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b5e3c;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d4c41;
+}
+
+/* ==============================
+   Responsive
+================================= */
+
+@media (max-width: 992px) {
+
+  .returns-hero {
+    padding: 70px 20px;
+  }
+
+  .returns-hero h1 {
+    font-size: 38px;
+  }
+
+  .policy-card {
+    padding: 25px;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .returns-hero{
+    padding:60px 20px;
+  }
+
+  .returns-hero h1{
+    font-size:30px;
+  }
+
+  .returns-hero p{
+    font-size:16px;
+  }
+
+  .returns-hero span{
+    font-size:14px;
+  }
+
+  .policy-card{
+    padding:22px;
+  }
+
+  .policy-card h2{
+    font-size:20px;
+    line-height:1.5;
+  }
+
+  .policy-card p,
+  .policy-card li{
+    font-size:15px;
+  }
+
+  .contact-card{
+    padding:35px 20px;
+  }
+
+  .contact-card h2{
+    font-size:28px;
+  }
+
+  .contact-box{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .contact-box div{
+    width:100%;
+    min-width:unset;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .returns-hero h1{
+    font-size:26px;
+  }
+
+  .policy-card h2{
+    font-size:18px;
+  }
+
+  .contact-card h2{
+    font-size:24px;
+  }
+
+}

@@ -1,0 +1,65 @@
+/* ===========================================================
+   TYPOGRAPHY SCALE — f1 through f5
+   Matches the reference screenshot (Powerlook): a bold condensed
+   display font for big section headers like "POPULAR CATEGORIES",
+   and a clean geometric sans for nav links, category links, and
+   small captions.
+
+   Usage: add the class directly to any heading/text element,
+   e.g. <h2 className="f1">Popular Categories</h2>
+=========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
+
+/* f1 — biggest, boldest. Section headers like "POPULAR CATEGORIES"
+   in the reference: bold condensed, uppercase, tight tracking. */
+.f1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+/* f2 — secondary headings, same condensed family, one step down.
+   Good for sub-section titles or a smaller page heading. */
+.f2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* f3 — nav-link style: small uppercase caps with wide letter
+   spacing, matching "TRENDING NOW / NEW ARRIVALS / T-SHIRTS" etc. */
+.f3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* f4 — regular-case link/label text, matching the "T-Shirts",
+   "Bottoms", "Co-Ords" category labels under the icon row. */
+.f4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* f5 — smallest caption text, matching the muted labels under the
+   circular category avatars ("Summer Essentials", "Party Wear"...). */
+.f5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b7280;
+  letter-spacing: 0;
+  line-height: 1.3;
+}

@@ -1,0 +1,721 @@
+/* Wrapper */
+.orders-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Order card */
+.order-card {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 1rem 1.25rem;
+  background-color: #ffffff;
+}
+
+/* Header */
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.order-id {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.order-date {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.order-summary-right {
+  text-align: right;
+}
+
+.order-total {
+  font-weight: 700;
+  color: #111827;
+}
+
+.order-status-text {
+  font-size: 0.8rem;
+  color: #4b5563;
+  margin-top: 0.25rem;
+}
+
+/* Timeline / Stepper */
+.order-tracker {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 0.75rem;
+  position: relative;
+}
+
+.order-tracker.cancelled {
+  opacity: 0.6;
+}
+
+/* Each step */
+.order-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+/* Connector line */
+.order-step::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  right: -50%;
+  height: 2px;
+  background-color: #e5e7eb;
+  z-index: -1;
+}
+
+.order-step:last-child::after {
+  display: none;
+}
+
+/* Circle */
+.step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #d1d5db;
+  margin: 0 auto 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  position: relative;
+  z-index: 10;  /* ✅ ALWAYS ABOVE LINE */
+}
+
+
+/* Label and meta */
+.step-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.step-meta {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: #6b7280;
+}
+
+/* Completed / current state – base */
+.order-step.completed .step-circle,
+.order-step.current .step-circle {
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* 🔵 Processing color */
+.order-step.step-processing.completed .step-circle,
+.order-step.step-processing.current .step-circle {
+  background-color: #2563eb; /* blue */
+}
+
+/* 🟠 Shipped color */
+.order-step.step-shipped.completed .step-circle,
+.order-step.step-shipped.current .step-circle {
+  background-color: #f97316; /* orange */
+}
+
+/* 🟢 Delivered color */
+.order-step.step-delivered.completed .step-circle,
+.order-step.step-delivered.current .step-circle {
+  background-color: #16a34a; /* green */
+}
+
+/* Neutral for Placed (grey) */
+.order-step.step-placed.completed .step-circle,
+.order-step.step-placed.current .step-circle {
+  background-color: #6b7280; /* grey */
+}
+
+/* Optional: highlight the current step label */
+.order-step.current .step-label {
+  color: #111827;
+}
+
+.order-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+/* ================================ */
+/* ✅ TIMELINE CONNECTOR LINE */
+/* ================================ */
+
+/* Base tracker */
+.order-tracker {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+/* Each step */
+.order-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+/* 🔹 Grey base line (background line) */
+.order-step::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  right: -50%;
+  height: 3px;
+  background-color: #e5e7eb;
+  z-index: 0;
+}
+
+.order-step:last-child::before {
+  display: none;
+}
+
+/* 🔹 Colored progress line (fills as steps complete) */
+.order-step.completed::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  right: -50%;
+  height: 3px;
+  z-index: 1;
+  animation: progress-fill 0.5s ease forwards;
+}
+
+/* ✅ Color mapping for connecting lines */
+.order-step.step-processing.completed::after {
+  background-color: #2563eb; /* Blue */
+}
+
+.order-step.step-shipped.completed::after {
+  background-color: #f97316; /* Orange */
+}
+
+.order-step.step-delivered.completed::after {
+  background-color: #16a34a; /* Green */
+}
+
+.order-step.step-placed.completed::after {
+  background-color: #6b7280; /* Grey */
+}
+
+/* ✅ Smooth animation */
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.order-footer {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-cancel-reason {
+  font-size: 0.8rem;
+  color: #b91c1c;
+}
+
+.order-actions {
+  margin-top: 0.25rem;
+}
+
+.cancel-btn-link {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.cancel-form {
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fee2e2;
+  background-color: #fef2f2;
+}
+
+.cancel-label {
+  display: block;
+  font-size: 0.78rem;
+  margin-bottom: 0.25rem;
+  color: #7f1d1d;
+}
+
+.cancel-textarea {
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #fecaca;
+  resize: vertical;
+}
+
+.cancel-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cancel-btn-light {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.cancel-btn-primary {
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #dc2626;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.orders-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.order-history-delete-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #fecaca;
+  background-color: #fef2f2;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+.order-items-preview {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.order-item-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.order-item-image-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.order-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-item-info {
+  font-size: 0.8rem;
+  color: #111827;
+}
+
+.order-item-name {
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.order-item-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.order-item-qty {
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+}
+
+.order-item-more {
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+.order-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.order-delete-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+
+.no-order-wrapper {
+  width: 100%;
+  height: 600px;
+  background: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+/* ====== Yellow Curved Background ====== */
+
+.no-order-top-bg {
+  width: 100%;
+  height: 260px;
+  background: #ffbf00;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+/* ====== Card ====== */
+
+.no-order-card {
+  position: relative;
+  z-index: 2;
+  width: 350px;
+  background: #ffffff;
+  margin-top: 100px;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ====== Image ====== */
+
+.no-order-img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+/* ====== Text ====== */
+
+.no-order-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.no-order-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* ====== Button ====== */
+
+.no-order-btn {
+  width: 80%;
+  padding: 10px 0;
+  background: #ffbf00;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.no-order-btn:hover {
+  background: #e0b020;
+}
+
+.order-history-delete-btn{
+  width: 150px;
+  border: none;
+  background-color: #e71616cd;
+  border: 1px solid red;
+  color: white;
+  font-size: 12px;
+  height: 30px;
+  font-weight: 600;
+  border-radius: 5px !important;
+}
+.order-history-delete-btn:hover{
+  background-color: red;
+  color: white;
+  border: none;
+  transform: scale(1.02);
+}
+.btn-order-invoice{
+  background: none;
+  border: 1px solid black;
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+/* ================================ */
+/* MOBILE RESPONSIVE STYLES */
+/* ================================ */
+
+@media (max-width: 768px) {
+  /* Wrapper */
+  .orders-list-wrapper {
+    gap: 1rem;
+  }
+
+  /* Order card */
+  .order-card {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  /* Header */
+  .order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .order-id {
+    font-size: 0.85rem;
+  }
+
+  .order-date {
+    font-size: 0.75rem;
+  }
+
+  .order-summary-right {
+    text-align: left;
+    margin-top: 0.25rem;
+  }
+
+  .order-total {
+    font-size: 0.9rem;
+  }
+
+  .order-status-text {
+    font-size: 0.75rem;
+  }
+
+  /* Order items preview */
+  .order-items-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .order-item-main {
+    width: 100%;
+  }
+
+  .order-item-image-wrap {
+    width: 50px;
+    height: 50px;
+  }
+
+  .order-item-info {
+    font-size: 0.75rem;
+  }
+
+  .order-item-name {
+    font-size: 0.8rem;
+  }
+
+  .order-item-meta {
+    font-size: 0.7rem;
+  }
+
+  .order-item-qty {
+    font-size: 0.7rem;
+  }
+
+  .order-item-more {
+    font-size: 0.7rem;
+    align-self: flex-end;
+  }
+
+  /* Timeline / Stepper */
+  .order-tracker {
+    margin-top: 1rem;
+  }
+
+  .order-step {
+    flex: none;
+    width: 25%;
+  }
+
+  .step-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+  }
+
+  .step-meta {
+    font-size: 0.65rem;
+  }
+
+  /* Footer */
+  .order-footer {
+    gap: 0.75rem;
+  }
+
+  .order-footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .order-delete-btn {
+    align-self: flex-start;
+  }
+
+  /* Cancel form */
+  .cancel-form {
+    padding: 0.5rem;
+  }
+
+  .cancel-textarea {
+    font-size: 0.75rem;
+  }
+
+  .cancel-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cancel-btn-light,
+  .cancel-btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  /* Header with delete button */
+  .orders-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .order-history-delete-btn {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* No orders state */
+  .no-order-wrapper {
+    height: 500px;
+  }
+
+  .no-order-card {
+    width: 90%;
+    margin-top: 80px;
+    padding: 1.5rem 1rem;
+  }
+
+  .no-order-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .no-order-card h2 {
+    font-size: 18px;
+  }
+
+  .no-order-card p {
+    font-size: 13px;
+  }
+
+  .no-order-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  /* Invoice button */
+  .btn-order-invoice {
+    margin-left: 10px;
+    font-size: 11px;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+@media(max-width: 480px) {
+  .cancel-btn-link{
+    margin-left: 220px;
+  }
+  .btn-order-invoice{
+    margin-left: 200px;
+    margin-top: 10px;
+  }
+  .order-date{
+    margin-top: -20px;
+  }
+  .order-history-delete-btn{
+    width: 50%;
+    padding: 5px;
+   margin-left: 170px;
+   margin-top: -55px;
+  }
+  .order-delete-btn{
+     display: none;
+  }
+
+}

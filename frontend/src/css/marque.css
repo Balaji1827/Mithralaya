@@ -1,0 +1,117 @@
+/* =========================
+   MARQUEE CONTAINER
+========================= */
+.marquee-box {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #0f0f0f, #1a1a1a, #0f0f0f);
+  padding: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.marquee-track {
+  display: flex;
+  gap: 80px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+.marquee-track.layer2 {
+  animation-duration: 25s; 
+  opacity: 0.8;
+}
+
+.marquee-track.layer3 {
+  animation-duration: 30s; 
+  opacity: 0.6;
+}
+
+
+.solid-text {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f5d38c;
+  text-transform: uppercase;
+  font-family: "Poppins", "Montserrat", sans-serif;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.stroke-text {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #f5d38c;
+  font-family: "Poppins", "Montserrat", sans-serif;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.gradient-text,
+.gradient-stroke-text {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "Poppins", "Montserrat", sans-serif;
+  background: linear-gradient(90deg, #ffd27d, #d4a24c, #ffd27d);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-move 5s linear infinite;
+}
+
+.gradient-stroke-text {
+  -webkit-text-stroke: 1px rgba(245, 211, 140, 0.7);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .solid-text,
+  .stroke-text,
+  .gradient-text,
+  .gradient-stroke-text {
+    font-size: 18px;
+    letter-spacing: 0.04em;
+  }
+
+  .marquee-track {
+    gap: 50px;
+  }
+}

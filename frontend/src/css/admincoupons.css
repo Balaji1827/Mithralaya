@@ -1,0 +1,300 @@
+/* ===========================================================
+   ADMIN COUPONS PAGE — self-contained styles.
+   All page-specific classes use a unique "aco-" prefix so they
+   never collide with other admin pages' CSS. (.admin-layout/
+   .admin-content are intentionally untouched — shared shell used
+   across every admin page.) The Table component (Table.jsx) has
+   its own separate "rt-" prefixed stylesheet and isn't touched here.
+
+   Replaces the old dark-glass/translucent form (which clashed with
+   the light table underneath it) with the same light indigo/violet
+   theme used across the rest of the admin panel. Colors forced with
+   !important throughout, consistent with the other admin pages.
+=========================================================== */
+
+.aco-header {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ececf7 !important;
+}
+
+.aco-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 72px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6366f1, #a855f7) !important;
+}
+
+.aco-header h1 {
+  margin: 0 !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em;
+  color: #1e1b3a !important;
+  opacity: 1 !important;
+}
+
+/* ---------- Buttons ---------- */
+.aco-btn-primary {
+  padding: 10px 20px !important;
+  border-radius: 8px !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  transition: box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aco-btn-primary:hover {
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.aco-btn-edit {
+  padding: 6px 14px !important;
+  border-radius: 7px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer;
+  background: #eef2ff !important;
+  color: #4338ca !important;
+  margin-right: 6px;
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aco-btn-edit:hover {
+  background: #e0e7ff !important;
+  transform: translateY(-1px);
+}
+
+.aco-btn-danger {
+  padding: 6px 14px !important;
+  border-radius: 7px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer;
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aco-btn-danger:hover {
+  background: #fecaca !important;
+  transform: translateY(-1px);
+}
+
+.aco-actions {
+  display: flex !important;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Form card (light, replaces the old dark-glass style) ---------- */
+.aco-form-card {
+  background: #fff !important;
+  border: 1px solid #ececf7 !important;
+  border-radius: 14px !important;
+  padding: 22px 26px 26px !important;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.06);
+}
+
+.aco-form-card h2 {
+  margin: 0 0 18px !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  color: #312e81 !important;
+}
+
+.aco-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.aco-grid > label {
+  flex: 1 1 200px;
+}
+
+.aco-form label {
+  display: flex !important;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #44475a !important;
+}
+
+.aco-form label:focus-within {
+  color: #4f46e5 !important;
+}
+
+.aco-full-width {
+  display: flex;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.aco-form input[type="text"],
+.aco-form input[type="number"],
+.aco-form input[type="date"],
+.aco-form select,
+.aco-form textarea {
+  padding: 10px 12px !important;
+  border: 1px solid #dcdce8 !important;
+  border-radius: 8px !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #1e1b3a !important;
+  background: #fff !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aco-form input:focus,
+.aco-form select:focus,
+.aco-form textarea:focus {
+  outline: none;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.16) !important;
+}
+
+.aco-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ---------- Image upload ---------- */
+.aco-image-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.aco-image-field label {
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #44475a !important;
+}
+
+.aco-image-field input[type="file"] {
+  font-size: 13px !important;
+  color: #4b5563 !important;
+}
+
+.aco-image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ececf7;
+  margin-top: 4px;
+}
+
+/* ---------- Active toggle ---------- */
+.aco-active-toggle {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 10px 16px !important;
+  margin-bottom: 18px;
+  background: #f8f8fd !important;
+  border: 1px solid #ececf7 !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+}
+
+.aco-active-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #6366f1;
+}
+
+.aco-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ---------- Status badge ---------- */
+.aco-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px 5px 10px !important;
+  border-radius: 999px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+}
+
+.aco-status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.aco-status-active {
+  background: #dcfce7 !important;
+  color: #166534 !important;
+}
+
+.aco-status-active::before {
+  background: #16a34a;
+}
+
+.aco-status-inactive {
+  background: #f3f4f6 !important;
+  color: #4b5563 !important;
+}
+
+.aco-status-inactive::before {
+  background: #9ca3af;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 700px) {
+  .aco-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .aco-form-card {
+    padding: 18px !important;
+  }
+
+  .aco-grid > label {
+    flex-basis: 100%;
+  }
+
+  .aco-actions {
+    flex-direction: column;
+  }
+
+  .aco-btn-edit,
+  .aco-btn-danger {
+    width: 100%;
+    margin-right: 0;
+  }
+}
